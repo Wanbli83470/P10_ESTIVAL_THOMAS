@@ -1,0 +1,55 @@
+
+{% extends "P8/base.html" %}
+
+{% block title%}
+    Food_details
+{% endblock title%}
+
+{% block content %}
+
+<!--Picture products-->
+<div class="container-fluid">
+
+    <div id="food_details" class="border-bottom border-{{ var_color }} mx-auto d-block w-50 mt-2">
+        <img src="{{ food.IMG_URL }}" class="img-fluid mx-auto d-block rounded" style="width:50%;" alt="Responsive image">
+        <h1 style="text-shadow: 1px 1px 2px black;" class="pt-5 text-center text-warning">{{ food.NOM }}</h1>
+
+    </div>
+
+<br>
+
+<!--Link sheets OpenFoodFact-->
+
+<div class="w-75 bg-{{var_color}} text-center text-white mx-auto d-block btn mb-3"> <a target="_blank" class="text-white" href="{{ food.PRODUIT_URL }}"> <h2 class="text-white"> Voir la fiche d'OpenFoodFacts  </h2></a>
+</div>
+
+
+<!--Value 100g-->
+<div class="table-responsive-sm text-center">
+<table class="table mx-auto">
+  <thead class="thead-dark">
+    <tr>
+        {% for t in titles %}
+      <th scope="col">{{ t }}</th>
+        {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for v in value100g %}
+
+      <td class="border border-dark">{{ v }}</td>
+
+      {% endfor %}
+    </tr>
+
+  </tbody>
+</table>
+</div>
+   <div id="ns" class="w-75 mx-auto mb-3">
+<img src="{{ img_ns }}" class="img-fluid mx-auto d-block rounded" alt="Responsive image">
+ </div>
+
+</div>
+    <br><br><br><br><br>
+{% endblock content %}
