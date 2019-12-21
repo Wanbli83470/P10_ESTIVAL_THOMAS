@@ -23,8 +23,18 @@ if os.environ.get('ENV'):
     SECRET_KEY = os.environ.get('SECRET_KEY_P8')
     DEBUG = True
 else :
-	DEBUG = False
-	SECRET_KEY = "test"
+    DEBUG = False
+    SECRET_KEY = "test"
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'travis_ci_test',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
