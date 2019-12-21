@@ -22,6 +22,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.environ.get('ENV'):
     SECRET_KEY = os.environ.get('SECRET_KEY_P8')
     DEBUG = True
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'pur_beurre',
+            'USER': 'wanbli',
+            'PASSWORD': 'jpmfmaemp73%',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+   }
+
 else :
     DEBUG = False
     SECRET_KEY = "test"
@@ -89,17 +101,6 @@ WSGI_APPLICATION = 'Pur_Beurre.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pur_beurre',
-        'USER': 'wanbli',
-        'PASSWORD': 'jpmfmaemp73%',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
