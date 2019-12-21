@@ -32,6 +32,7 @@ class GetTestCase(TestCase):
         ns_product = ns_product.get(CATEGORIE_ID=self.cat_key)
         print(ns_product.NUTRISCORE)
         self.assertIn(1, [1, 3])
+        print("Get the min nutriscore")
 
 
 class CodeHttp(TestCase):
