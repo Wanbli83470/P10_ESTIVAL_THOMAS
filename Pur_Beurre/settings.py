@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.environ.get('ENV'):
     SECRET_KEY = os.environ.get('SECRET_KEY_P8')
     DEBUG = True
-
+    print("env detecté")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -35,6 +35,7 @@ if os.environ.get('ENV'):
    }
 
 else :
+    print("env non detecté")
     DEBUG = False
     SECRET_KEY = "test"
     DATABASES = {
